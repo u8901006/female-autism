@@ -50,20 +50,45 @@ async function searchPapers(query, retmax) {
   return data?.esearchresult?.idlist || [];
 }
 
+async function sleep(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function fetchWithRetry(url, options, maxRetries = 3) {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    const resp = await fetch(url, options);
+    if (resp.status === 429) {
+      const wait = (attempt + 1) * 5000;
+      console.error(`[WARN] Rate limited, waiting ${wait / 1000}s...`);
+      await sleep(wait);
+      continue;
+    }
+    if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+    return resp;
+  }
+  throw new Error(`HTTP 429 after ${maxRetries} retries`);
+}
+
 async function fetchDetails(pmids) {
   if (!pmids.length) return [];
-  const params = new URLSearchParams({
-    db: "pubmed",
-    id: pmids.join(","),
-    retmode: "xml",
-  });
-  const resp = await fetch(`${EFETCH_URL}?${params}`, {
-    headers: { "User-Agent": USER_AGENT },
-    signal: AbortSignal.timeout(60000),
-  });
-  if (!resp.ok) throw new Error(`efetch HTTP ${resp.status}`);
-  const xml = await resp.text();
-  return parseXmlArticles(xml);
+  const allPapers = [];
+  const batchSize = 50;
+  for (let i = 0; i < pmids.length; i += batchSize) {
+    const batch = pmids.slice(i, i + batchSize);
+    const params = new URLSearchParams({
+      db: "pubmed",
+      id: batch.join(","),
+      retmode: "xml",
+    });
+    const resp = await fetchWithRetry(`${EFETCH_URL}?${params}`, {
+      headers: { "User-Agent": USER_AGENT },
+      signal: AbortSignal.timeout(60000),
+    });
+    const xml = await resp.text();
+    allPapers.push(...parseXmlArticles(xml));
+    if (i + batchSize < pmids.length) await sleep(1000);
+  }
+  return allPapers;
 }
 
 function parseXmlArticles(xml) {
@@ -138,15 +163,17 @@ async function main() {
   const dateFilter = buildDateFilter(opts.days);
   const allPmids = new Set();
 
-  for (const q of SEARCH_QUERIES) {
+  for (let qi = 0; qi < SEARCH_QUERIES.length; qi++) {
+    const q = SEARCH_QUERIES[qi];
     const fullQuery = `${q} AND ${dateFilter}`;
     try {
       const ids = await searchPapers(fullQuery, opts.maxPapers);
       ids.forEach((id) => allPmids.add(id));
-      console.error(`[INFO] Query found ${ids.length} PMIDs`);
+      console.error(`[INFO] Query ${qi + 1}/${SEARCH_QUERIES.length} found ${ids.length} PMIDs`);
     } catch (e) {
       console.error(`[WARN] Search query failed: ${e.message}`);
     }
+    if (qi < SEARCH_QUERIES.length - 1) await sleep(500);
   }
 
   const pmidList = [...allPmids];

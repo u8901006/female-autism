@@ -524,8 +524,18 @@ async function main() {
 
   const papersData = loadJson(opts.input);
   const docsDir = dirname(resolve(opts.output));
+  const outputPath = resolve(opts.output);
   const summarizedPmids = loadSummarizedPmids(docsDir);
 
+  const existingReportHasContent = (() => {
+    if (!existsSync(outputPath)) return false;
+    try {
+      const existing = readFileSync(outputPath, "utf-8");
+      return existing.includes("news-card featured") || existing.includes("top_picks") || (existing.includes("news-card") && !existing.includes("暫無"));
+    } catch { return false; }
+  })();
+
+  let analysis;
   const newPapers = (papersData.papers || []).filter(
     (p) => p.pmid && !summarizedPmids.has(p.pmid)
   );
@@ -534,8 +544,11 @@ async function main() {
     `[INFO] Total: ${papersData.count}, Already summarized: ${papersData.count - newPapers.length}, New: ${newPapers.length}`
   );
 
-  let analysis;
   if (newPapers.length === 0) {
+    if (existingReportHasContent) {
+      console.error("[INFO] No new papers but existing report has content. Skipping overwrite.");
+      return;
+    }
     console.error("[WARN] No new papers to summarize");
     const now = new Date();
     const taipei = new Date(now.getTime() + 8 * 3600000);

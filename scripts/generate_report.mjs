@@ -173,7 +173,7 @@ ${papersText}
   for (const model of MODELS) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        console.error(`[INFO] Trying ${model} (attempt ${attempt + 1})...`);
+        console.error(`[INFO] Trying ${model} (attempt ${attempt + 1}, stream)...`);
         const resp = await fetch(`${API_BASE}/chat/completions`, {
           method: "POST",
           headers,
@@ -186,6 +186,7 @@ ${papersText}
             temperature: 0.3,
             top_p: 0.9,
             max_tokens: MAX_TOKENS,
+            stream: true,
           }),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         });
@@ -207,8 +208,8 @@ ${papersText}
           break;
         }
 
-        const data = await resp.json();
-        const text = data.choices?.[0]?.message?.content?.trim();
+        const text = await readSSEStream(resp);
+
         if (!text) {
           console.error("[WARN] Empty response content");
           continue;
@@ -224,6 +225,7 @@ ${papersText}
         console.error(
           `[INFO] Analysis complete: ${result.top_picks?.length || 0} top picks, ${result.all_papers?.length || 0} total`
         );
+        result._model = model;
         return result;
       } catch (e) {
         if (e.name === "TimeoutError" || e.name === "AbortError") {
@@ -237,6 +239,37 @@ ${papersText}
 
   console.error("[ERROR] All models and attempts failed");
   return null;
+}
+
+async function readSSEStream(resp) {
+  const reader = resp.body.getReader();
+  const decoder = new TextDecoder();
+  let fullText = "";
+  let buffer = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() || "";
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || !trimmed.startsWith("data:")) continue;
+      const data = trimmed.slice(5).trim();
+      if (data === "[DONE]") continue;
+
+      try {
+        const parsed = JSON.parse(data);
+        const delta = parsed.choices?.[0]?.delta?.content;
+        if (delta) fullText += delta;
+      } catch {}
+    }
+  }
+
+  return fullText.trim();
 }
 
 function escapeHtml(s) {

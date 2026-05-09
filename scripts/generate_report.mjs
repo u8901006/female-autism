@@ -573,7 +573,6 @@ async function main() {
   }
 
   const html = generateHtml(analysis);
-  const outputPath = resolve(opts.output);
   const outputDir = dirname(outputPath);
 
   mkdirSync(outputDir, { recursive: true });

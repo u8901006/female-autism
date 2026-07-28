@@ -67,7 +67,7 @@ const html = `<!DOCTYPE html>
     <a href="https://buymeacoffee.com/CYlee" target="_blank" rel="noopener"><span class="icon">☕</span>Buy Me a Coffee</a>
   </div>
   <footer>
-    <p>Powered by PubMed + Zhipu AI &middot; <a href="https://github.com/u8901006/female-autism">GitHub</a></p>
+<p>Powered by PubMed + NVIDIA AI &middot; <a href="https://github.com/u8901006/female-autism">GitHub</a></p>
   </footer>
 </div>
 </body>

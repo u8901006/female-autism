@@ -3,9 +3,9 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 
-const API_BASE = process.env.ZHIPU_API_BASE || "https://open.bigmodel.cn/api/coding/paas/v4";
-const MODELS = ["glm-5-turbo", "glm-4.7", "glm-4.7-flash"];
-const MAX_TOKENS = 50000;
+const API_BASE = "https://integrate.api.nvidia.com/v1";
+const MODELS = ["nvidia/nemotron-3-super-120b-a12b", "nvidia/nemotron-3-nano-30b-a3b"];
+const MAX_TOKENS = 16384;
 const TIMEOUT_MS = 480_000;
 
 const TAG_OPTIONS = [
@@ -36,7 +36,7 @@ function parseArgs(args) {
     if (args[i] === "--output" && args[i + 1]) opts.output = args[++i];
     if (args[i] === "--api-key" && args[i + 1]) opts.apiKey = args[++i];
   }
-  if (!opts.apiKey) opts.apiKey = process.env.ZHIPU_API_KEY || "";
+  if (!opts.apiKey) opts.apiKey = process.env.NVIDIA_API_KEY || "";
   return opts;
 }
 
@@ -107,7 +107,7 @@ function robustJsonParse(text) {
   return null;
 }
 
-async function callZhipuAPI(apiKey, papersData) {
+async function callNvidiaAPI(apiKey, papersData) {
   const dateStr = papersData.date;
   const paperCount = papersData.count;
   const papersText = JSON.stringify(papersData.papers, null, 2);
@@ -173,7 +173,7 @@ ${papersText}
   for (const model of MODELS) {
     for (let attempt = 0; attempt < 3; attempt++) {
       try {
-        console.error(`[INFO] Trying ${model} (attempt ${attempt + 1}, stream)...`);
+        console.error(`[INFO] Trying ${model} (attempt ${attempt + 1})...`);
         const resp = await fetch(`${API_BASE}/chat/completions`, {
           method: "POST",
           headers,
@@ -183,10 +183,11 @@ ${papersText}
               { role: "system", content: SYSTEM_PROMPT },
               { role: "user", content: prompt },
             ],
-            temperature: 0.3,
-            top_p: 0.9,
+            temperature: 1.0,
+            top_p: 0.95,
             max_tokens: MAX_TOKENS,
-            stream: true,
+            stream: false,
+            chat_template_kwargs: { enable_thinking: false },
           }),
           signal: AbortSignal.timeout(TIMEOUT_MS),
         });
@@ -208,7 +209,8 @@ ${papersText}
           break;
         }
 
-        const text = await readSSEStream(resp);
+        const data = await resp.json();
+        const text = data.choices?.[0]?.message?.content || "";
 
         if (!text) {
           console.error("[WARN] Empty response content");
@@ -465,7 +467,7 @@ function generateHtml(analysis) {
       <div class="header-meta">
         <span class="badge badge-date">📅 ${dateDisplay}</span>
         <span class="badge badge-count">📊 ${totalCount} 篇文獻</span>
-        <span class="badge badge-source">Powered by PubMed + Zhipu AI</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
       </div>
     </div>
   </header>
@@ -514,7 +516,7 @@ async function main() {
   const opts = parseArgs(process.argv.slice(2));
 
   if (!opts.apiKey) {
-    console.error("[ERROR] No API key. Set ZHIPU_API_KEY env var or use --api-key");
+    console.error("[ERROR] No API key. Set NVIDIA_API_KEY env var or use --api-key");
     process.exit(1);
   }
   if (!opts.input || !opts.output) {
@@ -563,7 +565,7 @@ async function main() {
     };
   } else {
     const filteredData = { ...papersData, count: newPapers.length, papers: newPapers };
-    analysis = await callZhipuAPI(opts.apiKey, filteredData);
+  analysis = await callNvidiaAPI(opts.apiKey, filteredData);
     if (!analysis) {
       console.error("[ERROR] Analysis failed, cannot generate report");
       process.exit(1);

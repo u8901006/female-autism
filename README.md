@@ -16,7 +16,7 @@
 ## 技術架構
 
 - **資料來源**: PubMed E-utilities API
-- **AI 模型**: GLM-5-Turbo（fallback: GLM-4.7 → GLM-4.7-Flash）
+- **AI 模型**: NVIDIA Nemotron 3 Super 120B A12B（fallback: NVIDIA Nemotron 3 Nano 30B A3B）
 - **部署**: GitHub Pages
 - **排程**: GitHub Actions（每日台北時間 21:05）
 - **運行環境**: Node.js 24

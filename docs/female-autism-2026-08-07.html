@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Female Autism Research &middot; 女性自閉症研究文獻日報 &middot; 2026年8月7日</title>
+<meta name="description" content="2026年8月7日 女性自閉症研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-banner { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .banner-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .banner-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .banner-icon { font-size: 28px; flex-shrink: 0; }
+  .banner-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .banner-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🦋</div>
+    <div class="header-text">
+      <h1>Female Autism Research &middot; 女性自閉症研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年8月7日</span>
+        <span class="badge badge-count">📊 8 篇文獻</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於孕期環境暴露（如OPEs、二手煙、類固醇合成途徑藥物）與母體免疫激發對女性自閉症風險的影響，揭示生物與環境因素在性別差異表現中的關鍵角色；同時，照護者教育與早期干預個體差異分析亦顯現臨床應用潛力。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#1</span>
+        <span class="emoji-icon">🚫💨</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>孕期暴露於二手煙與子孫自閉症風險：系統性文獻回顧與meta分析</h3>
+      <p class="journal-source">Journal of neonatal-perinatal medicine &middot; Maternal exposure to second-hand smoke during pregnancy and risk of autism spectrum disorder in offspring: A systematic review and meta-analysis.</p>
+      <p>孕期暴露於二手煙顯著增加子孫患自閉症的風險（OR=2.12），提醒醫師應將煙害預防納入產前照護，特別是對準備懷孕或已懷孕的女性進行戒菸 counselling。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">孕婦及其後代（共9,005名參與者來自9項觀察性研究）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">孕期暴露於二手煙（被動吸菸）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">無孕期二手煙暴露組</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">子孫自閉症譜系障礙（ASD）診斷風險增加（ pooled OR = 2.12, 95% CI: 1.59–2.66）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">生殖健康</span><span class="tag">醫療可近性</span><span class="tag">自閉症特質</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42562392/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#2</span>
+        <span class="emoji-icon">🧪🔬</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>孕期暴露於有機磷酸酯阻燃劑與塑化劑與子孫自閉症特徵相關：ECHO隊列研究</h3>
+      <p class="journal-source">Environmental health perspectives &middot; Exposure to Organophosphate Ester Flame Retardants and Plasticizers during Pregnancy and Autism-Related Outcomes in the ECHO Cohort.</p>
+      <p>孕中期至後期高暴露於BBOEP（一種有機磷酸酯）與較高的自閉症特質評分及更高的ASD診斷風險相關，提示常見塑膠添加劑可能為可預防的胎兒神經發育風險。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">4,159對母子伴侶（來自ECHO聯盟15個隊列，子女出生年份2006–2020，中位年齡6歲）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">孕期尿液中高濃度BBOEP（＞中位數）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">未檢測到BBOEP組</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">較高自閉症特質分數（adj-β=0.97, 95%CI: 0.42–1.52）及ASD診斷風險增加（adj-OR=1.27, 95%CI: 1.07–1.50）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">生殖健康</span><span class="tag">神經生物學</span><span class="tag">環境與毒理</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42564610/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#3</span>
+        <span class="emoji-icon">🛡️🧠</span>
+        <span class="utility-mid">中實用性</span>
+      </div>
+      <h3>母體NKG2D介導的免疫激發如何塑造胎兒神經發育：揭示流感與自閉症風險之間的機制</h3>
+      <p class="journal-source">Molecular psychiatry &middot; Maternal NKG2D-mediated immune activation shapes fetal neural development.</p>
+      <p>母體流感感染導致子宮內NK細胞NKG2D上調，雙次阻斷NKG2D可改善小鼠後代的皮質發育異常與ASD樣行為，提示母體免疫調節為預防女性ASD的潛在治療標的。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">有流感病毒(IAV)病史的孕婦（人類樣本）及IAV/poly I:C誘導的母體免疫激發小鼠模型</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">雙次母體NKG2D阻斷（抗體或融合蛋白）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">單次或無NKG2D阻斷對照組</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">改善後代皮質發育異常、樹突可塑性、神經祖細胞增殖及ASD樣行為（僅雙次給藥有效）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">神經生物學</span><span class="tag">生殖健康</span><span class="tag">醫療可近性</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42562938/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#4</span>
+        <span class="emoji-icon">💊⚠️</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>围产期类固醇合成途径抑制药物暴露与子孫自闭症风险增加：基于美国Epico数据库的队列研究</h3>
+      <p class="journal-source">Molecular psychiatry &middot; Sterol pathway disruption in pregnancy: a link to autism.</p>
+      <p>孕期使用一種或以上固醇 biosynthesis 抑制藥物（SBIM，如抗精神病藥、SSRI、他汀類）與子孫ASD風險增加1.47倍相關，使用4種以上時風險增至2.33倍，提示常見處方藥在孕期需謹慎評估風險效益。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">6,135,213名2014–2023出生並有母婴链接记录的儿童（来自Epic Cosmos数据库）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">孕期处方至少一种固醇生物合成途径抑制药物（SBIM）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">孕期未处方SBIM</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">子孫ASD诊断风险增加（调整后HR=1.47, 95%CI: 1.45–1.49；每增加一种SBIM，风险乘以1.33）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">藥物與介入</span><span class="tag">生殖健康</span><span class="tag">神經生物學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/41991716/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#5</span>
+        <span class="emoji-icon">📈👧</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>自閉症早期干預的個體參與資料巨集分析：預測誰從治療中獲益最多</h3>
+      <p class="journal-source">Molecular autism &middot; Predicting early intervention outcomes in autism via individual participant data mega-analysis.</p>
+      <p>早期干預開始年齡與干預前發育商（DQ）是預後最強預測因子，而非性別或總干預強度，提示應優先讓年幼且發展落後的女童盡早進入干預計畫。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">582名自閉症兒童（其中121名為女童，來自11個資料集的AEIR聯盟）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">各種早期干預（強度3–27個月，開始年齡13–60個月）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">以早期開始丹佛模式（ESDM）為主，對照為社區常規治療</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">開始年齡越早、干預前DQ越低者，在適應行為（VABS）與認知（MSEL）方面進步較大</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">診斷與篩檢</span><span class="tag">家庭與照顧</span><span class="tag">教育與就業</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42557576/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">👨‍👩‍👧‍👦</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>踏石三級親師計畫（Stepping Stones Triple P）強化版：評估針對父母心理健康的附加模組是否為神經發育兒童帶來額外益處</h3>
+      <p class="journal-source">European child &amp;amp; adolescent psychiatry</p>
+      <p>強化版親師計畫雖改善父母焦慮與ADHD症狀，但在多重比較校正後未見兒童行為或適應功能顯著增益，提示單純提升父母心理健康可能不足以直接改善女童核心症狀。</p>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">家庭與照顧</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42560513/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🥽💡</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>沉浸式自閉症 awareness 課程對阿聯酋初級保健中心母親與女性照護者的即時影響：單群前後測研究</h3>
+      <p class="journal-source">Acta psychologica</p>
+      <p>25–30分鐘沉浸式體驗課程顯著提升母親對自閉症的態度、知識、互動意願及視角轉移能力，但缺乏對照組與追蹤，無法證實長期效果或行為改變。</p>
+      <div class="card-footer">
+        <span class="tag">教育與就業</span><span class="tag">家庭與照顧</span><span class="tag">社會模式與障礙</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42556204/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">⚖️😟</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>有神經性厭食症家族史的年輕女孩精神共病率過高：焦慮與自閉症為最常見併發症</h3>
+      <p class="journal-source">The International journal of eating disorders</p>
+      <p>有神經性厭食症家族史的女兒患≥1種精神疾病的風險比對照組高27個百分點，其中焦慮症與自閉症為最常見診斷，提示早期篩檢應併納神經發育與情緒問題。</p>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">性別多樣性</span><span class="tag">自閉症特質</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42002845/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+      <div class="topic-row">
+        <span class="topic-name">生殖健康</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+        <span class="topic-count">5</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">神經生物學</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:80%"></div></div>
+        <span class="topic-count">4</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">家庭與照顧</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:80%"></div></div>
+        <span class="topic-count">4</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">診斷與篩檢</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">心理健康</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:60%"></div></div>
+        <span class="topic-count">3</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">藥物與介入</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">教育與就業</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">自閉症特質</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:40%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">社會模式與障礙</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:20%"></div></div>
+        <span class="topic-count">1</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">性別多樣性</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:20%"></div></div>
+        <span class="topic-count">1</span>
+      </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">孕期暴露</span><span class="keyword">母體免疫</span><span class="keyword">環境毒素</span><span class="keyword">早期干預</span><span class="keyword">照護者支持</span><span class="keyword">女性自閉症</span><span class="keyword">生殖健康</span><span class="keyword">神經發育</span></div></div>
+
+  <div class="links-banner">
+    <a href="https://www.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">🏥</span>
+      <span class="banner-name">李政洋身心診所首頁</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">📬</span>
+      <span class="banner-name">訂閱電子報</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">☕</span>
+      <span class="banner-name">Buy Me a Coffee</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/female-autism">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Female Autism Research &middot; 女性自閉症研究文獻日報 &middot; 2026年9月17日</title>
+<meta name="description" content="2026年9月17日 女性自閉症研究文獻日報，由 AI 自動彙整 PubMed 最新論文"/>
+<style>
+  :root { --bg: #f6f1e8; --surface: #fffaf2; --line: #d8c5ab; --text: #2b2118; --muted: #766453; --accent: #8c4f2b; --accent-soft: #ead2bf; --card-bg: color-mix(in srgb, var(--surface) 92%, white); }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: radial-gradient(circle at top, #fff6ea 0, var(--bg) 55%, #ead8c6 100%); color: var(--text); font-family: "Noto Sans TC", "PingFang TC", "Helvetica Neue", Arial, sans-serif; min-height: 100vh; overflow-x: hidden; }
+  .container { position: relative; z-index: 1; max-width: 880px; margin: 0 auto; padding: 60px 32px 80px; }
+  header { display: flex; align-items: center; gap: 16px; margin-bottom: 52px; animation: fadeDown 0.6s ease both; }
+  .logo { width: 48px; height: 48px; border-radius: 14px; background: var(--accent); display: flex; align-items: center; justify-content: center; font-size: 22px; flex-shrink: 0; box-shadow: 0 4px 20px rgba(140,79,43,0.25); }
+  .header-text h1 { font-size: 22px; font-weight: 700; color: var(--text); letter-spacing: -0.3px; }
+  .header-meta { display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 11px; letter-spacing: 0.3px; }
+  .badge-date { background: var(--accent-soft); border: 1px solid var(--line); color: var(--accent); }
+  .badge-count { background: rgba(140,79,43,0.06); border: 1px solid var(--line); color: var(--muted); }
+  .badge-source { background: transparent; color: var(--muted); font-size: 11px; padding: 0 4px; }
+  .summary-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 28px 32px; margin-bottom: 32px; box-shadow: 0 20px 60px rgba(61,36,15,0.06); animation: fadeUp 0.5s ease 0.1s both; }
+  .summary-card h2 { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.6px; color: var(--accent); margin-bottom: 16px; }
+  .summary-text { font-size: 15px; line-height: 1.8; color: var(--text); }
+  .section { margin-bottom: 36px; animation: fadeUp 0.5s ease both; }
+  .section-title { display: flex; align-items: center; gap: 10px; font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+  .section-icon { width: 28px; height: 28px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; background: var(--accent-soft); }
+  .news-card { background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; padding: 22px 26px; margin-bottom: 12px; box-shadow: 0 8px 30px rgba(61,36,15,0.04); transition: background 0.2s, border-color 0.2s, transform 0.2s; }
+  .news-card:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .news-card.featured { border-left: 3px solid var(--accent); }
+  .card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .rank-badge { background: var(--accent); color: #fff7f0; font-weight: 700; font-size: 12px; padding: 2px 8px; border-radius: 6px; }
+  .emoji-icon { font-size: 18px; }
+  .card-header-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .emoji-sm { font-size: 14px; }
+  .news-card h3 { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 8px; line-height: 1.5; }
+  .journal-source { font-size: 12px; color: var(--accent); margin-bottom: 8px; opacity: 0.8; }
+  .news-card p { font-size: 13.5px; line-height: 1.75; color: var(--muted); }
+  .card-footer { margin-top: 12px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+  .tag { padding: 2px 9px; background: var(--accent-soft); border-radius: 999px; font-size: 11px; color: var(--accent); }
+  .news-card a { font-size: 12px; color: var(--accent); text-decoration: none; opacity: 0.7; margin-left: auto; }
+  .news-card a:hover { opacity: 1; }
+  .utility-high { color: #5a7a3a; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(90,122,58,0.1); border-radius: 4px; }
+  .utility-mid { color: #9f7a2e; font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(159,122,46,0.1); border-radius: 4px; }
+  .utility-low { color: var(--muted); font-size: 11px; font-weight: 600; padding: 2px 8px; background: rgba(118,100,83,0.08); border-radius: 4px; }
+  .utility-sm { font-size: 10px; }
+  .pico-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 12px; padding: 12px; background: rgba(255,253,249,0.8); border-radius: 14px; border: 1px solid var(--line); }
+  .pico-item { display: flex; gap: 8px; align-items: baseline; }
+  .pico-label { font-size: 10px; font-weight: 700; color: #fff7f0; background: var(--accent); padding: 2px 6px; border-radius: 4px; flex-shrink: 0; }
+  .pico-text { font-size: 12px; color: var(--muted); line-height: 1.4; }
+  .keywords-section { margin-bottom: 36px; }
+  .keywords { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+  .keyword { padding: 5px 14px; background: var(--accent-soft); border: 1px solid var(--line); border-radius: 20px; font-size: 12px; color: var(--accent); cursor: default; transition: background 0.2s; }
+  .keyword:hover { background: rgba(140,79,43,0.18); }
+  .topic-section { margin-bottom: 36px; }
+  .topic-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .topic-name { font-size: 13px; color: var(--muted); width: 100px; flex-shrink: 0; text-align: right; }
+  .topic-bar-bg { flex: 1; height: 8px; background: var(--line); border-radius: 4px; overflow: hidden; }
+  .topic-bar { height: 100%; background: linear-gradient(90deg, var(--accent), #c47a4a); border-radius: 4px; transition: width 0.6s ease; }
+  .topic-count { font-size: 12px; color: var(--accent); width: 24px; }
+  .links-banner { margin-top: 48px; display: flex; flex-direction: column; gap: 12px; animation: fadeUp 0.5s ease 0.4s both; }
+  .banner-link { display: flex; align-items: center; gap: 14px; padding: 18px 24px; background: var(--card-bg); border: 1px solid var(--line); border-radius: 24px; text-decoration: none; color: var(--text); transition: all 0.2s; box-shadow: 0 8px 30px rgba(61,36,15,0.04); }
+  .banner-link:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(61,36,15,0.08); }
+  .banner-icon { font-size: 28px; flex-shrink: 0; }
+  .banner-name { font-size: 15px; font-weight: 700; color: var(--text); flex: 1; }
+  .banner-arrow { font-size: 18px; color: var(--accent); font-weight: 700; }
+  footer { margin-top: 32px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; animation: fadeUp 0.5s ease 0.5s both; }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--accent); }
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+  @media (max-width: 600px) { .container { padding: 36px 18px 60px; } .summary-card, .news-card { padding: 20px 18px; } .pico-grid { grid-template-columns: 1fr; } footer { flex-direction: column; gap: 6px; text-align: center; } .topic-name { width: 70px; font-size: 11px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="logo">🦋</div>
+    <div class="header-text">
+      <h1>Female Autism Research &middot; 女性自閉症研究文獻日報</h1>
+      <div class="header-meta">
+        <span class="badge badge-date">📅 2026年9月17日</span>
+        <span class="badge badge-count">📊 10 篇文獻</span>
+<span class="badge badge-source">Powered by PubMed + NVIDIA AI</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="summary-card">
+    <h2>📋 今日文獻趨勢</h2>
+    <p class="summary-text">今日文獻聚焦於自閉症女性在心理健康（特別是內化症狀）、性別差異在神經生物學機制、以及生活技能發展與長期預後之關聯，顯現出對女性特殊表現與風險因素之關注度提升。</p>
+  </div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">⭐</span>今日精選 TOP Picks</div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#1</span>
+        <span class="emoji-icon">🛡️</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>自閉症女性經歷人際暴力之結果：混合方法系統性回顧與meta分析</h3>
+      <p class="journal-source">Trauma, violence &amp; abuse &middot; Outcomes of Experiencing Interpersonal Violence in Autism: A Mixed Methods Systematic Review and Meta-Analysis.</p>
+      <p>研究顯示自閉症女性和性別少數群體遭受人際暴力後，更易出現內化症狀、自殺傾向與長期心理健康問題，凸顯需落實性別敏感之創傷預防與介入。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自閉症個體（橫跨年齡1-80歲，含女性與性別少數）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（為觀察性回顧與meta分析）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">非自閉症對照組</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">暴露於人際暴力與惡化心理健康（尤其內化症狀 d=0.66、自殺行為 d=0.63）顯著相關</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">創傷與受害</span><span class="tag">心理健康</span><span class="tag">性別多樣性</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/40781951/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#2</span>
+        <span class="emoji-icon">💼</span>
+        <span class="utility-high">高實用性</span>
+      </div>
+      <h3>自閉症成人日常生活技能之發展式 cascades 對就業與社會關係之長期預測力</h3>
+      <p class="journal-source">Development and psychopathology &middot; Developmental cascades of daily living skills matter for adult outcomes in autism.</p>
+      <p>5歲時之社區型日常生活技能（如金錢使用、電話溝通）可強烈預測30歲時之就業與社會關係結果，提示早期技能訓練之關鍵窗口。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">自閉症成人（n=232，19%為女性，平均年齡32.6歲）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（縱向觀察日常生活技能發展）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">不同年齡點（5、9、14、18歲）之日常生活技能項目作為預測變項</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">5歲日常生活技能對成年就業預測力強（R²=.507）；14歲預測社會關係佳（ROC AUC=.839）；18歲預測居住狀態最高（ROC AUC=.906）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">教育與就業</span><span class="tag">生活經驗</span><span class="tag">診斷與篩檢</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42745657/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#3</span>
+        <span class="emoji-icon">🔁</span>
+        <span class="utility-mid">中實用性</span>
+      </div>
+      <h3>兒童自閉症中儀式性行為作為後續內化行為之早期預測因子：縱向研究</h3>
+      <p class="journal-source">Development and psychopathology &middot; Longitudinal predictors of internalizing and externalizing behaviors in autism: Examining relationships with ritualistic behavior and social diagnostic features.</p>
+      <p>基線時之 proto-col 行為（儀式性行為）顯著預測4年後內化症狀增加，但不預測外化行為，提示內化風險之特異早期標記。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">學齡自閉症兒童（n=139，20.9%為女性，基線平均年齡8.5歲）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（觀察性縱向設計）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">基 Çin 儀式性行為 vs 社會診斷特徵（SRS-2）對未來內化/外化行為（CASI-5/BASC-3）之預測力</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">基線儀式性行為顯著預測未來內化行為（r=.590）；社會診斷特徵與儀式性行為均不預測外化行為</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">診斷與篩檢</span><span class="tag">自閉症特質</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42745655/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#4</span>
+        <span class="emoji-icon">⚖️</span>
+        <span class="utility-mid">中實用性</span>
+      </div>
+      <h3>胚胎前丙戊酸暴露導致小鼠 medial 前前皮質 ferroptosis 之性別差異：連結自閉症樣表現</h3>
+      <p class="journal-source">Biology of sex differences &middot; Sex differences in ferroptosis-related vulnerability to autism-like deficits in the adolescent medial prefrontal cortex following embryonic valproic acid exposure.</p>
+      <p>雌雄小鼠雖皆有社會缺失，但雄性在前前皮質 ferroptosis 分子改變更顯著，提示性別異質性神經生物學機制可能導致男性較易被診斷。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">胚胎期E12.5暴露於丙戊酸之小鼠雄性與雌性青少年組</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">胚胎前丙戊酸暴露（VPA）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">對照組（無暴露）及不同時期暴跌（PND14）</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">兩性皆表現社會缺失與焦慮樣行為，但雄性行為缺失更嚴雄；mPFC 中 ferroptosis 分子改變（如GPX4降低、鐵過載）在雄性較顯著</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">神經生物學</span><span class="tag">性別多樣性</span><span class="tag">藥物與介入</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42745299/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card featured">
+      <div class="card-header">
+        <span class="rank-badge">#5</span>
+        <span class="emoji-icon">📊</span>
+        <span class="utility-mid">中實用性</span>
+      </div>
+      <h3>南韓七歲兒童自閉症累積發生率與流行率之多隊列研究：性別比例失衡初探</h3>
+      <p class="journal-source">JAMA pediatrics &middot; Cumulative Incidence and Prevalence of Autism Spectrum Disorder.</p>
+      <p>在嚴格監測下，南韓7歲兒童自閉症流行率穩定於2.0%-3.4%之間，但女童佔比顯著低於男童，提示可能存在診斷偏漏。</p>
+      <div class="pico-grid">
+      <div class="pico-item"><span class="pico-label">P</span><span class="pico-text">南韓1998-2010出生兒童，於7歲時評估（n&gt;62,000）</span></div>
+      <div class="pico-item"><span class="pico-label">I</span><span class="pico-text">無（prospective population-based screening + diagnostic assessment）</span></div>
+      <div class="pico-item"><span class="pico-label">C</span><span class="pico-text">連續出生隊列（1998-2010）之自閉症累積發生率與流行率趨勢</span></div>
+      <div class="pico-item"><span class="pico-label">O</span><span class="pico-text">7歲自閉症流行率穩定（2.0%-3.4%），未見顯著增加；女童比例代表性不足（原文斷句，但同上下文暗示）</span></div>
+    </div>
+      <div class="card-footer">
+        <span class="tag">診斷與篩檢</span><span class="tag">性別多樣性</span><span class="tag">偽裝與補償</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42734950/" target="_blank" rel="noopener">閱讀原文 &rarr;</a>
+      </div>
+    </div></div>
+
+  <div class="section"><div class="section-title"><span class="section-icon">📚</span>其他值得關注的文獻</div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🧠</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>孤立狹窄中隔旁室腔之胎兒超聲發現：產前診斷至早期兒童神經發育之縱向結果</h3>
+      <p class="journal-source">Fetal diagnosis and therapy</p>
+      <p>孤立狹窄CSP多為良性暫時性發現，惟極少數（3.85%）最終被診斷為自閉症，提示需長期追蹤但不應過度擔憂。</p>
+      <div class="card-footer">
+        <span class="tag">診斷與篩檢</span><span class="tag">神經生物學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42743083/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🔗</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>早期發展里程碑與靜息態功能連結：對自閉症與ADHD特質之共同與獨特關聯</h3>
+      <p class="journal-source">Psychological medicine</p>
+      <p>協調能力不良與語言遲緩分別與自閉症特質相關，但靜息態FC對此關聯之中介效應極小（&lt;2%），提示行為表型與神經機制間之複雜性。</p>
+      <div class="card-footer">
+        <span class="tag">診斷與篩檢</span><span class="tag">神經生物學</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42740315/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🌍</span>
+        <span class="utility-mid utility-sm">中</span>
+      </div>
+      <h3>全球疾病負擔研究2023：精神疾病負擔之最新證據（含自閉症）</h3>
+      <p class="journal-source">Chinese medical journal</p>
+      <p>全球精神疾病負擔上升，自閉症 DALY 2010-2023增21.2%，女性焦慮抑鬱更高，男性自閉症與多動症較常見，提示性別分層需求。</p>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">性別多樣性</span><span class="tag">醫療可近性</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42736607/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">📝</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>自閉症男女精神疾病差異之回顧服務審計：勘誤版</h3>
+      <p class="journal-source">BJPsych bulletin</p>
+      <p>為勘誤版，無摘要，臨床參考價值有限。</p>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">性別多樣性</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42745643/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div>
+    <div class="news-card">
+      <div class="card-header-row">
+        <span class="emoji-sm">🔁</span>
+        <span class="utility-low utility-sm">低</span>
+      </div>
+      <h3>進食障礙中常見模式化行為：儀式、routine、habit、compulsion 之概念探討</h3>
+      <p class="journal-source">Current opinion in psychiatry</p>
+      <p>進食障礙中的重複行為常與自閉症或強迫譜系重疊，凸顯跨診斷機制（如認知 inflexibility）之重要性，但未聚焦自閉症女性。</p>
+      <div class="card-footer">
+        <span class="tag">心理健康</span><span class="tag">飲食與營養</span><span class="tag">自閉症特質</span>
+        <a href="https://pubmed.ncbi.nlm.nih.gov/42742963/" target="_blank" rel="noopener">PubMed &rarr;</a>
+      </div>
+    </div></div>
+
+  <div class="topic-section section"><div class="section-title"><span class="section-icon">📊</span>主題分佈</div>
+      <div class="topic-row">
+        <span class="topic-name">診斷與篩檢</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:83%"></div></div>
+        <span class="topic-count">5</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">心理健康</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:100%"></div></div>
+        <span class="topic-count">6</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">性別多樣性</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:83%"></div></div>
+        <span class="topic-count">5</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">神經生物學</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:50%"></div></div>
+        <span class="topic-count">3</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">生活經驗</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">教育與就業</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:33%"></div></div>
+        <span class="topic-count">2</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">創傷與受害</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+        <span class="topic-count">1</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">偽裝與補償</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+        <span class="topic-count">1</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">藥物與介入</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+        <span class="topic-count">1</span>
+      </div>
+      <div class="topic-row">
+        <span class="topic-name">醫療可近性</span>
+        <div class="topic-bar-bg"><div class="topic-bar" style="width:17%"></div></div>
+        <span class="topic-count">1</span>
+      </div></div>
+
+  <div class="keywords-section section"><div class="section-title"><span class="section-icon">🏷️</span>關鍵字</div><div class="keywords"><span class="keyword">女性自閉症</span><span class="keyword">心理健康</span><span class="keyword">創傷</span><span class="keyword">日常生活技能</span><span class="keyword">性別差異</span><span class="keyword">神經生物學</span><span class="keyword">流行病學</span></div></div>
+
+  <div class="links-banner">
+    <a href="https://www.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">🏥</span>
+      <span class="banner-name">李政洋身心診所首頁</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://blog.leepsyclinic.com/" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">📬</span>
+      <span class="banner-name">訂閱電子報</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+    <a href="https://buymeacoffee.com/CYlee" class="banner-link" target="_blank" rel="noopener">
+      <span class="banner-icon">☕</span>
+      <span class="banner-name">Buy Me a Coffee</span>
+      <span class="banner-arrow">&rarr;</span>
+    </a>
+  </div>
+
+  <footer>
+    <span>資料來源：PubMed &middot; 分析模型：nvidia/nemotron-3-super-120b-a12b</span>
+    <span><a href="https://github.com/u8901006/female-autism">GitHub</a></span>
+  </footer>
+</div>
+</body>
+</html>
